@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <title>Collatz conjecture</title>
+</head>
+<body>
+  <h1>Collatz conjecture</h1>
+
+  <div id="graphsDiv"></div>
+  <p>***ATTENTION: the smaller the number of iterations, the less precise the number of cycles is***</p>
+  <form id="numberOfIterationsForm">
+    <label>Change the number of iterations: </label>
+    <input type="number" name="numberOfIterations" id="numberOfIterations"> 
+    <input type="submit" value="daje!">
+  </form>
+  <table></table>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
