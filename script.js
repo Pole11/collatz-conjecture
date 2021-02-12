@@ -1,12 +1,24 @@
 let numberOfIterations = 50;
 let graphsData = [];
 
-document.getElementById("numberOfIterationsForm").addEventListener("submit", submitFunction);
+document.getElementById("numberOfIterationsForm").addEventListener("submit", submitInterationsFunction);
+document.getElementById("serchNumberForm").addEventListener("submit", submitNumberSearchFunction);
 
-function submitFunction(e) {
+function submitInterationsFunction(e) {
   numberOfIterations = document.getElementById('numberOfIterations').value;
   collatz(numberOfIterations);
   drawGraphsAndTable();
+
+  e.preventDefault();
+}
+
+function submitNumberSearchFunction(e) {
+  let inputNumber = document.getElementById('numberInput').value;
+  if (inputNumber < numberOfIterations && inputNumber >= 0) {
+    document.getElementById(inputNumber).scrollIntoView();
+  } else {
+    alert('The number is out of range, try with another one!')
+  }
 
   e.preventDefault();
 }
@@ -40,7 +52,9 @@ function collatz(iterations) {
 }
 
 function drawGraphsAndTable() {
-  let tableDiv = document.querySelector("table");
+  document.getElementById('tableInfo').innerText = 'The number of iterations is: ' + numberOfIterations;
+
+  let tableDiv = document.getElementById("collatzTable");
   tableDiv.innerHTML = ""
 
   let collatzList = collatz(numberOfIterations);
@@ -87,6 +101,7 @@ function generateTableHead(table, data) {
 function generateTable(table, data) {
   for (let element of data) {
     let row = table.insertRow();
+    row.id = element.number;
     for (key in element) {
       let cell = row.insertCell();
       let text = document.createTextNode(element[key]);
