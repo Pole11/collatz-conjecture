@@ -20,4 +20,19 @@ tr:hover {
   background-color: lightgray;
 }
 
+.fixedButton {
+  position: fixed;
+  top: 0;
+  bottom: -90vh;
+  left: 1.5em;
+  height: 2em;
+  margin: auto;
 
+  background-color: white;
+
+  -webkit-transform-origin: 100% 50%;
+     -moz-transform-origin: 100% 50%;
+      -ms-transform-origin: 100% 50%;
+       -o-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+} 

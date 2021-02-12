@@ -3,6 +3,13 @@ let graphsData = [];
 
 document.getElementById("numberOfIterationsForm").addEventListener("submit", submitInterationsFunction);
 document.getElementById("serchNumberForm").addEventListener("submit", submitNumberSearchFunction);
+document.getElementById("tornaSuButton").addEventListener("click", tornaSuFunction);
+
+function tornaSuFunction(e) {
+  document.getElementById('1').scrollIntoView();
+
+  e.preventDefault();
+}
 
 function submitInterationsFunction(e) {
   numberOfIterations = document.getElementById('numberOfIterations').value;
@@ -14,7 +21,7 @@ function submitInterationsFunction(e) {
 
 function submitNumberSearchFunction(e) {
   let inputNumber = document.getElementById('numberInput').value;
-  if (inputNumber < numberOfIterations && inputNumber >= 0) {
+  if (inputNumber < numberOfIterations && inputNumber >= 1) {
     document.getElementById(inputNumber).scrollIntoView();
   } else {
     alert('The number is out of range, try with another one!')
