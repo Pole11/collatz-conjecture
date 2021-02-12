@@ -3,9 +3,9 @@ let graphsData = [];
 
 document.getElementById("numberOfIterationsForm").addEventListener("submit", submitInterationsFunction);
 document.getElementById("serchNumberForm").addEventListener("submit", submitNumberSearchFunction);
-document.getElementById("tornaSuButton").addEventListener("click", tornaSuFunction);
+document.getElementById("upButton").addEventListener("click", upFunction);
 
-function tornaSuFunction(e) {
+function upFunction(e) {
   document.getElementById('1').scrollIntoView();
 
   e.preventDefault();
