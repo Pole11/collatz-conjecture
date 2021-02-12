@@ -21,9 +21,10 @@ tr:hover {
 }
 
 .fixedButton {
+  z-index: 10;
   position: fixed;
   top: 0;
-  bottom: -90vh;
+  bottom: calc(-100% + 4em);
   left: 1.5em;
   height: 2em;
   margin: auto;
